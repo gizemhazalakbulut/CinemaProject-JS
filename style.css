@@ -1,0 +1,101 @@
+:root {
+  /*Renkler*/
+
+  --backgroundColor: #292929;
+  --seat-color: #444451;
+  --text-color: #777;
+  --reserved-color: #fff;
+  --selected-color: #f6eb6f;
+  --info-background: rgba(0, 0, 0, 0.2);
+
+  /*Oluşumlar*/
+
+  --transition: all 0.5s ease;
+
+  /*Gölgeler*/
+
+  --box-shadow: 0 3px 8px rgba(255, 255, 255, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background-color: var(--backgroundColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.screen {
+  margin: 20px 0;
+  box-shadow: var(--box-shadow);
+  height: 100px;
+}
+
+.screen img {
+  width: 100%;
+  height: 100%;
+}
+
+.seatsRow {
+  display: flex;
+}
+
+.seat.reserved {
+  color: var(--reserved-color);
+}
+
+.seat.selected {
+  color: var(--selected-color);
+}
+
+.seat {
+  color: var(--seat-color);
+  font-size: 20px;
+  margin: 5px;
+  transition: var(--transition);
+}
+
+.seat:not(.reserved):hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+.movie-list {
+  margin: 20px 0px;
+}
+
+.info {
+  background-color: var(--info-background);
+  display: flex;
+  padding: 5px 10px;
+  color: var(--text-color);
+  gap: 10px;
+}
+
+.info li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.infoText {
+  color: var(--text-color);
+  margin: 5px 0;
+}
+
+.infoText.open {
+  display: block;
+}
+
+.infoText span {
+  color: var(--selected-color);
+}
